@@ -1,5 +1,5 @@
 import { UserComponent } from "./user/user.component";
-import { UserListComponent } from "./user-list.component";
+import { UserListComponent } from "./user/user-list.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 

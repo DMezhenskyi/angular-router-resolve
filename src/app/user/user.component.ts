@@ -1,5 +1,5 @@
 import { catchError, delay, map, switchMap } from "rxjs/operators";
-import { UsersService } from "./../users.service";
+import { UsersService } from "./users.service";
 import { Component, OnInit } from "@angular/core";
 import { User } from "./user";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -39,7 +39,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.user$ = this.activatedRoute.params.pipe(
       map((param) => param?.id),
-      delay(2000),
+      delay(4000),
       switchMap((id) => this.users.getUser(id)),
       catchError(() => {
         this.router.navigate([""]);

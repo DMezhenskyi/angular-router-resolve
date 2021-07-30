@@ -5,14 +5,7 @@ import { Component } from "@angular/core";
   template: `
     <mat-toolbar color="primary">
       <span>Resolve Guard:</span>
-      <a
-        class="first-link"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        mat-button
-        routerLink="/"
-        >Users</a
-      >
+      <a mat-button routerLink="/">Users</a>
     </mat-toolbar>
     <main class="content">
       <router-outlet></router-outlet>

@@ -8,7 +8,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { UserModule } from "./user/user.module";
-import { UserListComponent } from "./user-list.component";
+import { UserListComponent } from "./user/user-list.component";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
