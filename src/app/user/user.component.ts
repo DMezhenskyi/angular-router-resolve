@@ -1,9 +1,8 @@
-import { catchError, delay, map, switchMap } from "rxjs/operators";
-import { UsersService } from "./users.service";
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import { User } from "./user";
-import { ActivatedRoute, Router } from "@angular/router";
-import { EMPTY, Observable } from "rxjs";
 
 @Component({
   selector: "app-user",
@@ -30,21 +29,9 @@ import { EMPTY, Observable } from "rxjs";
 })
 export class UserComponent implements OnInit {
   user$!: Observable<User>;
-  constructor(
-    private users: UsersService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.user$ = this.activatedRoute.params.pipe(
-      map((param) => param?.id),
-      delay(4000),
-      switchMap((id) => this.users.getUser(id)),
-      catchError(() => {
-        this.router.navigate([""]);
-        return EMPTY;
-      })
-    );
+    this.user$ = this.activatedRoute.data.pipe(map((data) => data?.user));
   }
 }

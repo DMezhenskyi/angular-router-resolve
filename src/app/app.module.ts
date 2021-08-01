@@ -10,7 +10,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { UserModule } from "./user/user.module";
 import { UserListComponent } from "./user/user-list.component";
 import { HttpClientModule } from "@angular/common/http";
-
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 @NgModule({
   declarations: [AppComponent, UserListComponent],
   imports: [
@@ -22,6 +22,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatIconModule,
     UserModule,
     HttpClientModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
